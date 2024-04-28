@@ -11,12 +11,7 @@ public class T5StringAnagram {
         Arrays.sort(arr1);
         Arrays.sort(arr2);
 
-        if (Arrays.equals(arr1,arr2)) {
-            return true;
-
-        } else {
-            return false;
-        }
+        return Arrays.equals(arr1, arr2);
     }
 
     public static void main(String[] args) {

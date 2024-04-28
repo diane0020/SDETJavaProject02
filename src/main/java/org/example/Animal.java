@@ -38,7 +38,7 @@ class Mammal extends Animal {
 
     @Override
     void displayInformation() {
-        System.out.println(breed + " " + color + " " + weight);
+        System.out.println(breed + ", " + color + ", " + weight + "kg");
     }
 }
 
@@ -55,7 +55,7 @@ class Bird extends Animal {
 
     @Override
     void displayInformation() {
-            System.out.println(breed + " " + color + " " + weight);
+            System.out.println(breed + ", " + color + ", " + weight + "kg");
     }
 }
 
@@ -145,16 +145,50 @@ class Parrot extends Bird {
 
 }
 
+class Eagle extends Bird {
+
+    Eagle(String breed, String color, double weight) {
+        super(breed, color, weight);
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("I eat fish");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("I sleep on the branch of a tree");
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("I sound like a series of high-pitched whistling");
+    }
+}
+
 class ZooEcosystem {
     public static void main(String[] args) {
-        Lion [] lions = {new Lion("North Mountain Pride", "Dark Brown", 190),
-        new Lion("Pridelands Pride", "Light Mustard", 128)};
 
-        for (Lion lion : lions) {
-            lion.eat();
-            lion.makeSound();
-            lion.sleep();
-            lion.movement(4);
+        Mammal [] mammals = {new Lion("South African Lion", "Light Brown", 190),
+                new Elephant("African Forest Elephant", "Light Gray", 6000)};
+
+        for (Mammal mammal : mammals) {
+            mammal.eat();
+            mammal.sleep();
+            mammal.makeSound();
+            mammal.displayInformation();
+            System.out.println();
+        }
+
+        Bird [] birds = {new Parrot("Parakeet", "Light Green and Yellow", .26),
+        new Eagle("Bold Eagle", "White Head and Black Body", 5.4)};
+
+        for (Bird bird : birds) {
+            bird.eat();
+            bird.sleep();
+            bird.makeSound();
+            bird.displayInformation();
             System.out.println();
         }
 
